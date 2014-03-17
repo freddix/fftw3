@@ -1,11 +1,11 @@
 Summary:	Fast Fourier Transform library
 Name:		fftw3
-Version:	3.3.3
+Version:	3.3.4
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.fftw.org/pub/fftw/fftw-%{version}.tar.gz
-# Source0-md5:	0a05ca9c7b3bfddc8278e7c40791a1c2
+# Source0-md5:	2edab8c06b24feeb3b82bbb3ebf3e7b3
 URL:		http://www.fftw.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
