@@ -1,7 +1,7 @@
 Summary:	Fast Fourier Transform library
 Name:		fftw3
 Version:	3.3.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.fftw.org/pub/fftw/fftw-%{version}.tar.gz
@@ -16,7 +16,7 @@ BuildRequires:	texinfo
 Requires:	%{name}-common = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		specflags	-O3 -fomit-frame-pointer -malign-double -ffast-math
+%define		specflags	-Ofast -malign-double -ffast-math
 
 %description
 FFTW is a collection of fast C routines for computing the Discrete
@@ -154,6 +154,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install -C build-long-double \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
